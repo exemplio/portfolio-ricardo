@@ -105,6 +105,16 @@ export const translations: Record<Locale, Translation> = {
           ],
         },
         {
+          role: "Desarrollador Backend (Freelance)",
+          company: "Proyectos Independientes",
+          period: "2026",
+          bullets: [
+            "Desarrollé un chatbot de ventas en tiempo real sobre WebSockets, integrando IA (Claude de Anthropic) para interpretar la intención del cliente, con memoria conversacional (Zep) e integración con WhatsApp.",
+            "Construí un bot de WhatsApp de atención automática por FAQs con panel de administración web, base de datos SQLite y despliegue con Docker en Railway.",
+            "Implementé el backend en Node.js + TypeScript con APIs REST, alertas por correo y una arquitectura orientada a producción.",
+          ],
+        },
+        {
           role: "Desarrollador Frontend",
           company: "Servicios Paguetodo",
           period: "Mayo 2023 — Oct 2025",
@@ -206,6 +216,16 @@ export const translations: Record<Locale, Translation> = {
             "Leading the development of a real-time chat system in Flutter, optimizing latency and the instant-messaging experience.",
             "Designing the integration with backend RESTful APIs and managing local data persistence (cache and offline functionality) with SQLite.",
             "Owning version control on GitHub/GitLab, enforcing CI/CD and code quality through peer reviews under agile methodologies.",
+          ],
+        },
+        {
+          role: "Backend Developer (Freelance)",
+          company: "Independent Projects",
+          period: "2026",
+          bullets: [
+            "Built a real-time sales chatbot over WebSockets, integrating AI (Anthropic's Claude) to interpret customer intent, with conversational memory (Zep) and WhatsApp integration.",
+            "Developed an automated WhatsApp FAQ bot with a web admin panel, SQLite database, and Docker deployment on Railway.",
+            "Implemented the backend in Node.js + TypeScript with REST APIs, email alerts, and a production-oriented architecture.",
           ],
         },
         {

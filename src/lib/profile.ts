@@ -7,6 +7,7 @@ export const profile = {
   location: "Venezuela",
   linkedin: "https://www.linkedin.com/in/ricardo-molina",
   github: "https://github.com/exemplio",
+  website: "ricardomolina.dev",
   cvPath: "/cv_ricardo_molina.pdf",
 } as const;
 
@@ -22,8 +23,8 @@ export const skillCategories: {
   items: string[];
 }[] = [
   { key: "mobile", items: ["Flutter", "Dart", "Kotlin", "SQLite"] },
-  { key: "web", items: ["React", "Angular", "Node.js", "TypeScript", "REST APIs"] },
+  { key: "web", items: ["React", "Angular", "Node.js", "TypeScript", "REST APIs", "WebSockets"] },
   { key: "database", items: ["MongoDB", "MySQL", "Firebase"] },
-  { key: "devops", items: ["Git", "GitHub", "GitLab", "CI/CD"] },
+  { key: "devops", items: ["Git", "GitHub", "GitLab", "CI/CD", "Docker"] },
   { key: "agile", items: ["Scrum", "JIRA", "Code Reviews"] },
 ];
