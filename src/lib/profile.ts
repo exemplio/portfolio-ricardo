@@ -6,7 +6,7 @@ export const profile = {
   phoneRaw: "+584141745498",
   location: "Venezuela",
   linkedin: "https://www.linkedin.com/in/ricardo-molina",
-  github: "https://github.com/ricardomolina",
+  github: "https://github.com/exemplio",
   cvPath: "/cv_ricardo_molina.pdf",
 } as const;
 
