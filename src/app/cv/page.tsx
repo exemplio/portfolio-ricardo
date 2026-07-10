@@ -27,6 +27,18 @@ export default function CvPage() {
     }))
     .filter((c) => c.items.length > 0);
 
+  const contactRows: { text: string; href?: string; blue?: boolean }[][] = [
+    [
+      { text: profile.email, href: `mailto:${profile.email}` },
+      { text: profile.phone },
+    ],
+    [
+      { text: profile.website, href: `https://${profile.website}`, blue: true },
+      { text: "LinkedIn", href: profile.linkedin },
+      { text: "GitHub", href: profile.github },
+    ],
+  ];
+
   return (
     <div className="min-h-screen bg-zinc-200 py-8 print:bg-white print:py-0">
       {/* Toolbar — hidden when printing */}
@@ -115,23 +127,28 @@ export default function CvPage() {
             <p className="mt-1 text-sm font-medium text-zinc-600">
               {cvRole[variant][locale]}
             </p>
-            <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-zinc-600">
-              {[
-                { text: profile.email, href: `mailto:${profile.email}` },
-                { text: profile.phone },
-                { text: profile.location },
-                { text: profile.website, href: `https://${profile.website}` },
-                { text: "LinkedIn", href: profile.linkedin },
-                { text: "GitHub", href: profile.github },
-              ].map((c, i) => (
-                <span key={i} className="flex items-center gap-x-2">
-                  {i > 0 && <span className="text-zinc-300">·</span>}
-                  {c.href ? (
-                    <a href={c.href}>{c.text}</a>
-                  ) : (
-                    <span>{c.text}</span>
-                  )}
-                </span>
+            <div className="mt-3 space-y-1 text-xs text-zinc-600">
+              {contactRows.map((row, r) => (
+                <div
+                  key={r}
+                  className="flex flex-wrap items-center gap-x-2 gap-y-1"
+                >
+                  {row.map((c, i) => (
+                    <span key={i} className="flex items-center gap-x-2">
+                      {i > 0 && <span className="text-zinc-300">·</span>}
+                      {c.href ? (
+                        <a
+                          href={c.href}
+                          className={c.blue ? "text-blue-600" : undefined}
+                        >
+                          {c.text}
+                        </a>
+                      ) : (
+                        <span>{c.text}</span>
+                      )}
+                    </span>
+                  ))}
+                </div>
               ))}
             </div>
           </div>

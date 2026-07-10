@@ -60,7 +60,6 @@ body {
   }
 
   a {
-    color: inherit !important;
     text-decoration: none !important;
   }
 }
