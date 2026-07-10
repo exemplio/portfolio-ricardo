@@ -106,7 +106,7 @@ export const translations: Record<Locale, Translation> = {
         },
         {
           role: "Desarrollador Frontend",
-          company: "Servicios Paquetodo",
+          company: "Servicios Paguetodo",
           period: "Mayo 2023 — Oct 2025",
           bullets: [
             "Desarrollé y mantuve interfaces de usuario escalables en Flutter, mejorando significativamente la usabilidad y experiencia del usuario móvil.",
@@ -134,7 +134,7 @@ export const translations: Record<Locale, Translation> = {
           status: "active",
         },
         {
-          title: "Plataforma Paquetodo",
+          title: "Plataforma Paguetodo",
           description:
             "App móvil en Flutter y paneles administrativos en Angular con integración de pasarelas de pago seguras y flujo de transacciones optimizado.",
           tags: ["Flutter", "Angular", "Pasarelas de pago", "GitLab"],
@@ -210,7 +210,7 @@ export const translations: Record<Locale, Translation> = {
         },
         {
           role: "Frontend Developer",
-          company: "Servicios Paquetodo",
+          company: "Servicios Paguetodo",
           period: "May 2023 — Oct 2025",
           bullets: [
             "Built and maintained scalable Flutter UIs, significantly improving mobile usability and user experience.",
@@ -238,7 +238,7 @@ export const translations: Record<Locale, Translation> = {
           status: "active",
         },
         {
-          title: "Paquetodo Platform",
+          title: "Paguetodo Platform",
           description:
             "Flutter mobile app and Angular admin panels integrating secure payment gateways and an optimized transaction flow.",
           tags: ["Flutter", "Angular", "Payment gateways", "GitLab"],
