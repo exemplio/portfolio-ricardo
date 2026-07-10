@@ -146,7 +146,7 @@ export const translations: Record<Locale, Translation> = {
           description:
             "Chatbot de ventas en tiempo real sobre WebSockets, potenciado con IA (Claude de Anthropic) para entender la intención del cliente. Memoria conversacional con Zep, gestión de catálogo y carrito, e integración con WhatsApp. Backend en Node.js + TypeScript. Proyecto freelance.",
           tags: ["Node.js", "TypeScript", "WebSockets", "Claude AI", "WhatsApp"],
-          period: "2025",
+          period: "2026",
           status: "completed",
         },
         {
@@ -154,7 +154,7 @@ export const translations: Record<Locale, Translation> = {
           description:
             "Bot de WhatsApp para atención automática por preguntas frecuentes, con panel de administración web y base de datos SQLite. Conexión directa vía Baileys, alertas por email y despliegue con Docker en Railway. Freelance para Aural Venezuela.",
           tags: ["Node.js", "TypeScript", "WhatsApp", "SQLite", "Docker"],
-          period: "2025",
+          period: "2026",
           status: "completed",
         },
       ],
@@ -250,7 +250,7 @@ export const translations: Record<Locale, Translation> = {
           description:
             "Real-time sales chatbot over WebSockets, powered by AI (Anthropic's Claude) to understand customer intent. Conversational memory with Zep, catalog and cart management, and WhatsApp integration. Node.js + TypeScript backend. Freelance project.",
           tags: ["Node.js", "TypeScript", "WebSockets", "Claude AI", "WhatsApp"],
-          period: "2025",
+          period: "2026",
           status: "completed",
         },
         {
@@ -258,7 +258,7 @@ export const translations: Record<Locale, Translation> = {
           description:
             "WhatsApp bot for automated FAQ support, with a web admin panel and SQLite database. Direct connection via Baileys, email alerts, and Docker deployment on Railway. Freelance for Aural Venezuela.",
           tags: ["Node.js", "TypeScript", "WhatsApp", "SQLite", "Docker"],
-          period: "2025",
+          period: "2026",
           status: "completed",
         },
       ],
