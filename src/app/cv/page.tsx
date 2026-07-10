@@ -108,9 +108,9 @@ export default function CvPage() {
       </div>
 
       {/* The CV "paper" */}
-      <article className="mx-auto max-w-[820px] bg-white px-10 py-10 text-[13px] leading-relaxed text-zinc-700 shadow-xl print:max-w-none print:px-0 print:py-0 print:shadow-none">
+      <article className="mx-auto max-w-[820px] bg-white px-10 py-10 text-[13px] leading-relaxed text-zinc-700 shadow-xl print:max-w-none print:px-0 print:py-0 print:text-[11.5px] print:leading-snug print:shadow-none">
         {/* Header */}
-        <header className="flex items-start justify-between gap-6 border-b border-zinc-300 pb-4">
+        <header className="flex items-start justify-between gap-6 border-b border-zinc-300 pb-4 print:pb-2">
           <div>
             <h1 className="text-3xl font-bold tracking-tight text-zinc-900">
               {profile.name}
@@ -142,7 +142,7 @@ export default function CvPage() {
         </Section>
 
         <Section title={L.experience}>
-          <div className="space-y-4">
+          <div className="space-y-4 print:space-y-2.5">
             {t.experience.items.map((item, i) => (
               <div key={`${item.company}-${i}`}>
                 <div className="flex items-baseline justify-between gap-4">
@@ -231,7 +231,7 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="mt-5 break-inside-avoid">
+    <section className="mt-5 break-inside-avoid print:mt-3">
       <h2 className="mb-2 border-b border-zinc-200 pb-1 text-[11px] font-bold uppercase tracking-widest text-zinc-500">
         {title}
       </h2>
