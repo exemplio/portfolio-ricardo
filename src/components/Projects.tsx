@@ -5,7 +5,6 @@ import { useI18n } from "@/lib/i18n";
 const statusStyles: Record<string, string> = {
   active: "border-emerald-400/30 bg-emerald-400/10 text-emerald-300",
   completed: "border-sky-400/30 bg-sky-400/10 text-sky-300",
-  placeholder: "border-zinc-500/30 bg-zinc-500/10 text-zinc-400",
 };
 
 export function Projects() {
@@ -43,9 +42,7 @@ export function Projects() {
                 >
                   {project.status === "active"
                     ? t.projects.inProgress
-                    : project.status === "completed"
-                      ? "2023 — 2025"
-                      : "—"}
+                    : project.period}
                 </span>
               </div>
 

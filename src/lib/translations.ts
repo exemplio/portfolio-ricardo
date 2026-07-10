@@ -48,7 +48,8 @@ export type Translation = {
       title: string;
       description: string;
       tags: string[];
-      status: "active" | "completed" | "placeholder";
+      period: string;
+      status: "active" | "completed";
     }[];
   };
   footer: {
@@ -129,6 +130,7 @@ export const translations: Record<Locale, Translation> = {
           description:
             "App de mensajería en tiempo real construida con Flutter. Latencia optimizada, soporte offline con SQLite y arquitectura escalable conectada a APIs RESTful.",
           tags: ["Flutter", "Dart", "SQLite", "REST API", "CI/CD"],
+          period: "2025",
           status: "active",
         },
         {
@@ -136,14 +138,24 @@ export const translations: Record<Locale, Translation> = {
           description:
             "App móvil en Flutter y paneles administrativos en Angular con integración de pasarelas de pago seguras y flujo de transacciones optimizado.",
           tags: ["Flutter", "Angular", "Pasarelas de pago", "GitLab"],
+          period: "2023 — 2025",
           status: "completed",
         },
         {
-          title: "Próximamente",
+          title: "Chatbot de Ventas con IA",
           description:
-            "Espacio reservado para nuevos proyectos personales y experimentos con Kotlin, React y Node.js.",
-          tags: ["Kotlin", "React", "Node.js"],
-          status: "placeholder",
+            "Chatbot de ventas en tiempo real sobre WebSockets, potenciado con IA (Claude de Anthropic) para entender la intención del cliente. Memoria conversacional con Zep, gestión de catálogo y carrito, e integración con WhatsApp. Backend en Node.js + TypeScript. Proyecto freelance.",
+          tags: ["Node.js", "TypeScript", "WebSockets", "Claude AI", "WhatsApp"],
+          period: "2025",
+          status: "completed",
+        },
+        {
+          title: "WhatsApp FAQ Bot — Aural",
+          description:
+            "Bot de WhatsApp para atención automática por preguntas frecuentes, con panel de administración web y base de datos SQLite. Conexión directa vía Baileys, alertas por email y despliegue con Docker en Railway. Freelance para Aural Venezuela.",
+          tags: ["Node.js", "TypeScript", "WhatsApp", "SQLite", "Docker"],
+          period: "2025",
+          status: "completed",
         },
       ],
     },
@@ -222,6 +234,7 @@ export const translations: Record<Locale, Translation> = {
           description:
             "Real-time messaging app built with Flutter. Optimized latency, offline support with SQLite, and a scalable architecture connected to RESTful APIs.",
           tags: ["Flutter", "Dart", "SQLite", "REST API", "CI/CD"],
+          period: "2025",
           status: "active",
         },
         {
@@ -229,14 +242,24 @@ export const translations: Record<Locale, Translation> = {
           description:
             "Flutter mobile app and Angular admin panels integrating secure payment gateways and an optimized transaction flow.",
           tags: ["Flutter", "Angular", "Payment gateways", "GitLab"],
+          period: "2023 — 2025",
           status: "completed",
         },
         {
-          title: "Coming soon",
+          title: "AI Sales Chatbot",
           description:
-            "Reserved spot for new personal projects and experiments with Kotlin, React and Node.js.",
-          tags: ["Kotlin", "React", "Node.js"],
-          status: "placeholder",
+            "Real-time sales chatbot over WebSockets, powered by AI (Anthropic's Claude) to understand customer intent. Conversational memory with Zep, catalog and cart management, and WhatsApp integration. Node.js + TypeScript backend. Freelance project.",
+          tags: ["Node.js", "TypeScript", "WebSockets", "Claude AI", "WhatsApp"],
+          period: "2025",
+          status: "completed",
+        },
+        {
+          title: "WhatsApp FAQ Bot — Aural",
+          description:
+            "WhatsApp bot for automated FAQ support, with a web admin panel and SQLite database. Direct connection via Baileys, email alerts, and Docker deployment on Railway. Freelance for Aural Venezuela.",
+          tags: ["Node.js", "TypeScript", "WhatsApp", "SQLite", "Docker"],
+          period: "2025",
+          status: "completed",
         },
       ],
     },
