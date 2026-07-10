@@ -40,6 +40,12 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_VE",
   },
+  other: {
+    // The site ships its own light/dark toggle, so force-dark extensions
+    // like Dark Reader should stand down (this meta is Dark Reader's
+    // official opt-out — it disables itself on pages that declare it).
+    "darkreader-lock": "",
+  },
 };
 
 export default function RootLayout({

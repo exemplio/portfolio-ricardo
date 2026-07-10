@@ -29,12 +29,12 @@ export function Hero() {
           <p className="mt-8 text-base font-medium text-zinc-600 dark:text-zinc-400">
             {t.hero.greeting}
           </p>
-          <h1 className="mt-2 bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-600 bg-clip-text text-5xl font-bold tracking-tight text-transparent sm:text-6xl md:text-7xl dark:from-white dark:via-zinc-100 dark:to-zinc-400">
+          <h1 className="mt-2 text-5xl font-bold tracking-tight text-zinc-900 sm:text-6xl md:text-7xl dark:text-white">
             {profile.name}
           </h1>
 
           <h2 className="mt-4 text-xl font-medium text-zinc-700 sm:text-2xl dark:text-zinc-300">
-            <span className="bg-gradient-to-r from-cyan-600 to-violet-600 bg-clip-text text-transparent dark:from-cyan-300 dark:to-violet-300">
+            <span className="text-cyan-600 dark:text-cyan-400">
               {t.hero.role}
             </span>
           </h2>
