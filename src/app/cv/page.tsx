@@ -20,6 +20,7 @@ export default function CvPage() {
   const { t, locale, setLocale } = useI18n();
   const [variant, setVariant] = useState<CvVariant>("mobile");
   const [withPhoto, setWithPhoto] = useState(false);
+  const [withProjects, setWithProjects] = useState(false);
   const L = cvLabels[locale];
 
   const orderedSkills = cvSkillOrder[variant]
@@ -64,6 +65,17 @@ export default function CvPage() {
             }`}
           >
             {withPhoto ? L.photoOn : L.photoOff}
+          </button>
+          <button
+            type="button"
+            onClick={() => setWithProjects((p) => !p)}
+            className={`ml-2 rounded-md px-3 py-1 text-xs font-medium transition-colors ${
+              withProjects
+                ? "bg-white text-zinc-900"
+                : "bg-white/10 text-zinc-300 hover:bg-white/20"
+            }`}
+          >
+            {L.projects}
           </button>
         </div>
 
@@ -154,24 +166,26 @@ export default function CvPage() {
           </div>
         </Section>
 
-        <Section title={L.projects}>
-          <div className="space-y-2.5">
-            {t.projects.items.map((p, i) => (
-              <div key={`${p.title}-${i}`}>
-                <div className="flex items-baseline justify-between gap-4">
-                  <h3 className="font-semibold text-zinc-900">{p.title}</h3>
-                  <span className="shrink-0 text-xs text-zinc-500">
-                    {p.status === "active" ? t.projects.inProgress : p.period}
-                  </span>
+        {withProjects && (
+          <Section title={L.projects}>
+            <div className="space-y-2.5">
+              {t.projects.items.map((p, i) => (
+                <div key={`${p.title}-${i}`}>
+                  <div className="flex items-baseline justify-between gap-4">
+                    <h3 className="font-semibold text-zinc-900">{p.title}</h3>
+                    <span className="shrink-0 text-xs text-zinc-500">
+                      {p.status === "active" ? t.projects.inProgress : p.period}
+                    </span>
+                  </div>
+                  <p>{p.description}</p>
+                  <p className="mt-0.5 text-xs text-zinc-500">
+                    {p.tags.join(" · ")}
+                  </p>
                 </div>
-                <p>{p.description}</p>
-                <p className="mt-0.5 text-xs text-zinc-500">
-                  {p.tags.join(" · ")}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Section>
+              ))}
+            </div>
+          </Section>
+        )}
 
         <Section title={L.education}>
           {cvEducation[locale].map((e, i) => (
