@@ -14,7 +14,10 @@ import {
 } from "@/lib/cv";
 
 const stripUrl = (url: string) =>
-  url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+  url
+    .replace(/^https?:\/\//, "")
+    .replace(/^www\./, "")
+    .replace(/\/$/, "");
 
 export default function CvPage() {
   const { t, locale, setLocale } = useI18n();
@@ -118,13 +121,24 @@ export default function CvPage() {
             <p className="mt-1 text-sm font-medium text-zinc-600">
               {cvRole[variant][locale]}
             </p>
-            <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-zinc-600">
-              <a href={`mailto:${profile.email}`}>{profile.email}</a>
-              <span>{profile.phone}</span>
-              <span>{profile.location}</span>
-              <a href={`https://${profile.website}`}>{profile.website}</a>
-              <a href={profile.linkedin}>{stripUrl(profile.linkedin)}</a>
-              <a href={profile.github}>{stripUrl(profile.github)}</a>
+            <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-zinc-600">
+              {[
+                { text: profile.email, href: `mailto:${profile.email}` },
+                { text: profile.phone },
+                { text: profile.location },
+                { text: profile.website, href: `https://${profile.website}` },
+                { text: stripUrl(profile.linkedin), href: profile.linkedin },
+                { text: stripUrl(profile.github), href: profile.github },
+              ].map((c, i) => (
+                <span key={i} className="flex items-center gap-x-2">
+                  {i > 0 && <span className="text-zinc-300">·</span>}
+                  {c.href ? (
+                    <a href={c.href}>{c.text}</a>
+                  ) : (
+                    <span>{c.text}</span>
+                  )}
+                </span>
+              ))}
             </div>
           </div>
           {withPhoto && (
