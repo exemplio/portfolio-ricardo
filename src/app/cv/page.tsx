@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useI18n } from "@/lib/i18n";
 import { profile, skillCategories } from "@/lib/profile";
 import {
@@ -19,6 +19,17 @@ export default function CvPage() {
   const [withPhoto, setWithPhoto] = useState(false);
   const [withProjects, setWithProjects] = useState(false);
   const L = cvLabels[locale];
+
+  // Give the CV its own document title so each language/variant downloads
+  // as a distinct, professionally named PDF (Chrome uses it as the filename).
+  useEffect(() => {
+    const docType = locale === "es" ? "CV" : "Resume";
+    const previous = document.title;
+    document.title = `${profile.name} · ${docType} · ${cvRole[variant][locale]}`;
+    return () => {
+      document.title = previous;
+    };
+  }, [locale, variant]);
 
   const orderedSkills = cvSkillOrder[variant]
     .map((key) => ({
