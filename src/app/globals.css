@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 :root {
+  /* The site is already dark — tell the browser and force-dark
+     extensions (e.g. Dark Reader) not to invert it on top. */
+  color-scheme: dark;
   --background: #0a0a0b;
   --foreground: #ededed;
 }
