@@ -13,12 +13,6 @@ import {
   type CvVariant,
 } from "@/lib/cv";
 
-const stripUrl = (url: string) =>
-  url
-    .replace(/^https?:\/\//, "")
-    .replace(/^www\./, "")
-    .replace(/\/$/, "");
-
 export default function CvPage() {
   const { t, locale, setLocale } = useI18n();
   const [variant, setVariant] = useState<CvVariant>("mobile");
@@ -127,8 +121,8 @@ export default function CvPage() {
                 { text: profile.phone },
                 { text: profile.location },
                 { text: profile.website, href: `https://${profile.website}` },
-                { text: stripUrl(profile.linkedin), href: profile.linkedin },
-                { text: stripUrl(profile.github), href: profile.github },
+                { text: "LinkedIn", href: profile.linkedin },
+                { text: "GitHub", href: profile.github },
               ].map((c, i) => (
                 <span key={i} className="flex items-center gap-x-2">
                   {i > 0 && <span className="text-zinc-300">·</span>}
