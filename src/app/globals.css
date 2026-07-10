@@ -1,8 +1,17 @@
 @import "tailwindcss";
 
+/* Toggle-driven dark mode: `dark:` utilities apply under [data-theme="dark"]. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 :root {
-  /* The site is already dark — tell the browser and force-dark
-     extensions (e.g. Dark Reader) not to invert it on top. */
+  color-scheme: light;
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+[data-theme="dark"] {
+  /* Declares the page as already-dark so browsers / force-dark extensions
+     (e.g. Dark Reader) don't invert it on top. */
   color-scheme: dark;
   --background: #0a0a0b;
   --foreground: #ededed;
@@ -38,16 +47,24 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0b;
+  background: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: #d4d4d8;
   border-radius: 9999px;
-  border: 2px solid #0a0a0b;
+  border: 2px solid var(--background);
 }
 
 ::-webkit-scrollbar-thumb:hover {
+  background: #a1a1aa;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #27272a;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
   background: #3f3f46;
 }
 

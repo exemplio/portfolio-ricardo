@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { I18nProvider } from "@/lib/i18n";
+import { ThemeProvider } from "@/lib/theme";
+
+// Runs before first paint to set the theme with no flash of the wrong colors:
+// stored preference → system preference → dark.
+const themeScript = `(function(){try{var t=localStorage.getItem('portfolio-theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme='dark';}})();`;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,11 +50,15 @@ export default function RootLayout({
   return (
     <html
       lang="es"
+      data-theme="dark"
       className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased`}
       suppressHydrationWarning
     >
-      <body className="flex min-h-full flex-col bg-zinc-950 text-zinc-100">
-        <I18nProvider>{children}</I18nProvider>
+      <body className="flex min-h-full flex-col bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <ThemeProvider>
+          <I18nProvider>{children}</I18nProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

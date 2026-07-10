@@ -26,30 +26,32 @@ export function Skills() {
     <section id="skills" className="relative scroll-mt-24 py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-cyan-400">
+          <p className="text-sm font-semibold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">
             {t.nav.skills}
           </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-white">
             {t.skills.title}
           </h2>
-          <p className="mt-4 text-zinc-400">{t.skills.subtitle}</p>
+          <p className="mt-4 text-zinc-600 dark:text-zinc-400">
+            {t.skills.subtitle}
+          </p>
         </div>
 
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {skillCategories.map((category) => (
             <div
               key={category.key}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-white/20 hover:bg-white/10"
+              className="group relative overflow-hidden rounded-2xl border border-zinc-950/10 bg-zinc-950/[0.03] p-6 backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-zinc-950/20 hover:bg-zinc-950/[0.06] dark:border-white/10 dark:bg-white/5 dark:hover:border-white/20 dark:hover:bg-white/10"
             >
               <div
                 className={`pointer-events-none absolute -top-12 -right-12 h-40 w-40 rounded-full bg-gradient-to-br ${categoryAccents[category.key]} blur-2xl transition-opacity group-hover:opacity-100`}
               />
               <div className="relative">
                 <div className="flex items-center gap-3">
-                  <span className="grid h-10 w-10 place-items-center rounded-lg border border-white/10 bg-zinc-900/80 font-mono text-sm font-semibold text-zinc-200">
+                  <span className="grid h-10 w-10 place-items-center rounded-lg border border-zinc-950/10 bg-zinc-100 font-mono text-sm font-semibold text-zinc-700 dark:border-white/10 dark:bg-zinc-900/80 dark:text-zinc-200">
                     {categoryIcons[category.key]}
                   </span>
-                  <h3 className="text-lg font-semibold text-white">
+                  <h3 className="text-lg font-semibold text-zinc-900 dark:text-white">
                     {t.skills.categories[category.key]}
                   </h3>
                 </div>
@@ -57,7 +59,7 @@ export function Skills() {
                   {category.items.map((item) => (
                     <li
                       key={item}
-                      className="rounded-full border border-white/10 bg-zinc-900/60 px-3 py-1 text-xs font-medium text-zinc-200"
+                      className="rounded-full border border-zinc-950/10 bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-700 dark:border-white/10 dark:bg-zinc-900/60 dark:text-zinc-200"
                     >
                       {item}
                     </li>

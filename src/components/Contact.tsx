@@ -53,16 +53,16 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="relative scroll-mt-24 border-t border-white/5 bg-zinc-950/40 py-24 sm:py-32"
+      className="relative scroll-mt-24 border-t border-zinc-950/[0.06] bg-zinc-50 py-24 sm:py-32 dark:border-white/5 dark:bg-zinc-950/40"
     >
       <div className="mx-auto max-w-4xl px-6 text-center">
-        <p className="text-sm font-semibold uppercase tracking-widest text-pink-400">
+        <p className="text-sm font-semibold uppercase tracking-widest text-pink-600 dark:text-pink-400">
           {t.nav.contact}
         </p>
-        <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        <h2 className="mt-2 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-white">
           {t.hero.ctaPrimary}
         </h2>
-        <p className="mx-auto mt-4 max-w-xl text-zinc-400">
+        <p className="mx-auto mt-4 max-w-xl text-zinc-600 dark:text-zinc-400">
           {t.hero.available}
         </p>
 
@@ -73,16 +73,16 @@ export function Contact() {
               href={card.href}
               target={card.href.startsWith("http") ? "_blank" : undefined}
               rel={card.href.startsWith("http") ? "noreferrer noopener" : undefined}
-              className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-5 text-left backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/10"
+              className="group flex items-center gap-4 rounded-2xl border border-zinc-950/10 bg-zinc-950/[0.03] p-5 text-left backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-zinc-950/20 hover:bg-zinc-950/[0.06] dark:border-white/10 dark:bg-white/5 dark:hover:border-white/20 dark:hover:bg-white/10"
             >
-              <span className="grid h-11 w-11 flex-none place-items-center rounded-xl border border-white/10 bg-zinc-900/80 text-zinc-200 transition-colors group-hover:text-white">
+              <span className="grid h-11 w-11 flex-none place-items-center rounded-xl border border-zinc-950/10 bg-zinc-100 text-zinc-700 transition-colors group-hover:text-zinc-900 dark:border-white/10 dark:bg-zinc-900/80 dark:text-zinc-200 dark:group-hover:text-white">
                 {card.icon}
               </span>
               <span className="min-w-0 flex-1">
                 <span className="block text-xs font-medium uppercase tracking-wider text-zinc-500">
                   {card.label}
                 </span>
-                <span className="block truncate text-sm font-medium text-zinc-100">
+                <span className="block truncate text-sm font-medium text-zinc-900 dark:text-zinc-100">
                   {card.value}
                 </span>
               </span>
@@ -95,7 +95,7 @@ export function Contact() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="flex-none text-zinc-500 transition-transform group-hover:translate-x-0.5 group-hover:text-white"
+                className="flex-none text-zinc-500 transition-transform group-hover:translate-x-0.5 group-hover:text-zinc-900 dark:group-hover:text-white"
               >
                 <path d="M7 7h10v10" />
                 <path d="M7 17 17 7" />
