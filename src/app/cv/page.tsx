@@ -19,6 +19,7 @@ const stripUrl = (url: string) =>
 export default function CvPage() {
   const { t, locale, setLocale } = useI18n();
   const [variant, setVariant] = useState<CvVariant>("mobile");
+  const [withPhoto, setWithPhoto] = useState(false);
   const L = cvLabels[locale];
 
   const orderedSkills = cvSkillOrder[variant]
@@ -50,6 +51,20 @@ export default function CvPage() {
               {L.variantNames[v]}
             </button>
           ))}
+          <span className="ml-2 text-xs uppercase tracking-wider text-zinc-500">
+            {L.photo}
+          </span>
+          <button
+            type="button"
+            onClick={() => setWithPhoto((p) => !p)}
+            className={`rounded-md px-3 py-1 text-xs font-medium transition-colors ${
+              withPhoto
+                ? "bg-white text-zinc-900"
+                : "bg-white/10 text-zinc-300 hover:bg-white/20"
+            }`}
+          >
+            {withPhoto ? L.photoOn : L.photoOff}
+          </button>
         </div>
 
         <div className="flex items-center gap-2">
@@ -83,21 +98,31 @@ export default function CvPage() {
       {/* The CV "paper" */}
       <article className="mx-auto max-w-[820px] bg-white px-10 py-10 text-[13px] leading-relaxed text-zinc-700 shadow-xl print:max-w-none print:px-0 print:py-0 print:shadow-none">
         {/* Header */}
-        <header className="border-b border-zinc-300 pb-4">
-          <h1 className="text-3xl font-bold tracking-tight text-zinc-900">
-            {profile.name}
-          </h1>
-          <p className="mt-1 text-sm font-medium text-zinc-600">
-            {cvRole[variant][locale]}
-          </p>
-          <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-zinc-600">
-            <a href={`mailto:${profile.email}`}>{profile.email}</a>
-            <span>{profile.phone}</span>
-            <span>{profile.location}</span>
-            <a href={`https://${profile.website}`}>{profile.website}</a>
-            <a href={profile.linkedin}>{stripUrl(profile.linkedin)}</a>
-            <a href={profile.github}>{stripUrl(profile.github)}</a>
+        <header className="flex items-start justify-between gap-6 border-b border-zinc-300 pb-4">
+          <div>
+            <h1 className="text-3xl font-bold tracking-tight text-zinc-900">
+              {profile.name}
+            </h1>
+            <p className="mt-1 text-sm font-medium text-zinc-600">
+              {cvRole[variant][locale]}
+            </p>
+            <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-zinc-600">
+              <a href={`mailto:${profile.email}`}>{profile.email}</a>
+              <span>{profile.phone}</span>
+              <span>{profile.location}</span>
+              <a href={`https://${profile.website}`}>{profile.website}</a>
+              <a href={profile.linkedin}>{stripUrl(profile.linkedin)}</a>
+              <a href={profile.github}>{stripUrl(profile.github)}</a>
+            </div>
           </div>
+          {withPhoto && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={profile.photo}
+              alt={profile.name}
+              className="h-24 w-24 shrink-0 rounded-full object-cover"
+            />
+          )}
         </header>
 
         <Section title={L.profile}>

@@ -7,7 +7,8 @@ export const profile = {
   location: "Venezuela",
   linkedin: "https://www.linkedin.com/in/ricardo-molina",
   github: "https://github.com/exemplio",
-  website: "ricardomolina.dev",
+  website: "exemplio.dev",
+  photo: "/ricardo.jpg",
   cvPath: "/cv_ricardo_molina.pdf",
 } as const;
 

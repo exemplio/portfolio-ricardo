@@ -17,6 +17,9 @@ export const cvLabels: Record<
     present: string;
     variant: string;
     language: string;
+    photo: string;
+    photoOn: string;
+    photoOff: string;
     print: string;
     variantNames: Record<CvVariant, string>;
   }
@@ -32,6 +35,9 @@ export const cvLabels: Record<
     present: "Presente",
     variant: "Perfil",
     language: "Idioma",
+    photo: "Foto",
+    photoOn: "Con foto",
+    photoOff: "Sin foto",
     print: "Descargar PDF",
     variantNames: { mobile: "Mobile", fullstack: "Full-Stack" },
   },
@@ -46,6 +52,9 @@ export const cvLabels: Record<
     present: "Present",
     variant: "Profile",
     language: "Language",
+    photo: "Photo",
+    photoOn: "With photo",
+    photoOff: "No photo",
     print: "Download PDF",
     variantNames: { mobile: "Mobile", fullstack: "Full-Stack" },
   },
