@@ -5,7 +5,7 @@ export const profile = {
   phone: "+58 414 174 5498",
   phoneRaw: "+584141745498",
   location: "Venezuela",
-  linkedin: "https://www.linkedin.com/in/ricardo-molina",
+  linkedin: "https://www.linkedin.com/in/ricardo-molina-60990924a/",
   github: "https://github.com/exemplio",
   website: "exemplio.dev",
   photo: "/ricardo.jpg",
