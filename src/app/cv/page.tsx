@@ -23,7 +23,8 @@ export default function CvPage() {
   // Give the CV its own document title so each language/variant downloads
   // as a distinct, professionally named PDF (Chrome uses it as the filename).
   useEffect(() => {
-    const docType = locale === "es" ? "CV" : "Resume";
+    const docType =
+      locale === "en" ? "Resume" : locale === "pt" ? "Currículo" : "CV";
     const previous = document.title;
     document.title = `${profile.name} · ${docType} · ${cvRole[variant][locale]}`;
     return () => {
@@ -103,7 +104,7 @@ export default function CvPage() {
           <span className="text-xs uppercase tracking-wider text-zinc-500">
             {L.language}
           </span>
-          {(["es", "en"] as const).map((lng) => (
+          {(["es", "en", "pt"] as const).map((lng) => (
             <button
               key={lng}
               type="button"

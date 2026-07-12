@@ -24,7 +24,7 @@ const STORAGE_KEY = "portfolio-locale";
 function detectInitialLocale(): Locale {
   if (typeof window === "undefined") return "es";
   const stored = window.localStorage.getItem(STORAGE_KEY) as Locale | null;
-  if (stored === "es" || stored === "en") return stored;
+  if (stored === "es" || stored === "en" || stored === "pt") return stored;
   const browser = window.navigator.language?.toLowerCase() ?? "";
   return browser.startsWith("en") ? "en" : "es";
 }

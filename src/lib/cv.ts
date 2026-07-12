@@ -58,6 +58,23 @@ export const cvLabels: Record<
     print: "Download PDF",
     variantNames: { mobile: "Mobile", fullstack: "Full-Stack" },
   },
+  pt: {
+    profile: "Resumo",
+    experience: "Experiência Profissional",
+    projects: "Projetos",
+    education: "Formação",
+    skills: "Habilidades Técnicas",
+    additional: "Informações Adicionais",
+    languages: "Idiomas",
+    present: "Presente",
+    variant: "Perfil",
+    language: "Idioma",
+    photo: "Foto",
+    photoOn: "Com foto",
+    photoOff: "Sem foto",
+    print: "Baixar PDF",
+    variantNames: { mobile: "Mobile", fullstack: "Full-Stack" },
+  },
 };
 
 /** Job title shown under the name, per variant + locale. */
@@ -65,10 +82,12 @@ export const cvRole: Record<CvVariant, Record<Locale, string>> = {
   mobile: {
     es: "Desarrollador Mobile & Full-Stack",
     en: "Mobile & Full-Stack Developer",
+    pt: "Desenvolvedor Mobile & Full-Stack",
   },
   fullstack: {
     es: "Desarrollador Full-Stack & Mobile",
     en: "Full-Stack & Mobile Developer",
+    pt: "Desenvolvedor Full-Stack & Mobile",
   },
 };
 
@@ -77,10 +96,12 @@ export const cvSummary: Record<CvVariant, Record<Locale, string>> = {
   mobile: {
     es: "Desarrollador de software con foco en aplicaciones móviles (Flutter, Kotlin) y experiencia full-stack (Angular, React, Node.js). Sólido en todo el ciclo de vida: arquitectura, consumo de APIs RESTful, persistencia offline, despliegue y mantenimiento. Enfocado en código limpio, escalable y en la mejora continua de la experiencia de usuario bajo metodologías ágiles.",
     en: "Software developer focused on mobile applications (Flutter, Kotlin) with full-stack experience (Angular, React, Node.js). Strong across the whole lifecycle: architecture, consuming RESTful APIs, offline persistence, deployment and maintenance. Focused on clean, scalable code and continuously improving the user experience through agile methodologies.",
+    pt: "Desenvolvedor de software com foco em aplicativos mobile (Flutter, Kotlin) e experiência full-stack (Angular, React, Node.js). Sólido em todo o ciclo de vida: arquitetura, consumo de APIs RESTful, persistência offline, deploy e manutenção. Focado em código limpo, escalável e na melhoria contínua da experiência do usuário sob metodologias ágeis.",
   },
   fullstack: {
     es: "Desarrollador full-stack con experiencia en backend (Node.js, TypeScript, WebSockets, APIs REST) y frontend web y móvil (Angular, React, Flutter). He construido desde chatbots en tiempo real con integración de IA hasta plataformas con pasarelas de pago. Enfocado en código limpio, escalable y orientado a producción bajo metodologías ágiles.",
     en: "Full-stack developer with backend experience (Node.js, TypeScript, WebSockets, REST APIs) and web & mobile frontends (Angular, React, Flutter). I've built everything from real-time chatbots with AI integration to platforms with payment gateways. Focused on clean, scalable, production-oriented code under agile methodologies.",
+    pt: "Desenvolvedor full-stack com experiência em backend (Node.js, TypeScript, WebSockets, APIs REST) e frontend web e mobile (Angular, React, Flutter). Já construí desde chatbots em tempo real com integração de IA até plataformas com gateways de pagamento. Focado em código limpo, escalável e orientado a produção sob metodologias ágeis.",
   },
 };
 
@@ -108,9 +129,17 @@ export const cvEducation: Record<
       period: "2018 — 2023",
     },
   ],
+  pt: [
+    {
+      institution: "Instituto Universitario de Tecnología Venezuela (IUTV)",
+      degree: "Tecnólogo em Informática",
+      period: "2018 — 2023",
+    },
+  ],
 };
 
 export const cvLanguages: Record<Locale, string[]> = {
   es: ["Español (Nativo)", "Inglés (Intermedio, B1)"],
   en: ["Spanish (Native)", "English (Intermediate, B1)"],
+  pt: ["Espanhol (Nativo)", "Inglês (Intermediário, B1)"],
 };
